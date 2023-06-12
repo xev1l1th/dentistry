@@ -1,0 +1,48 @@
+<#import "parts/common.ftlh" as c>
+<@c.page>
+    <div class="card my-3" data-id="${e.id}">
+        <div class="m-2">
+            <span>${e.id}</span><br/>
+            <i>${e.name}</i><br/>
+            <i>${e.position}</i><br/>
+            <i>${e.getGender().getName()}</i><br/>
+            <i>${e.getEmployeeType().getName()}</i><br/>
+        </div>
+        <div class="card-footer text-muted container">
+            <div class="row">
+                <a class="col btn btn-primary" href="/employee/edit?employee=${e.id}">Edit</a>
+            </div>
+        </div>
+    </div>
+
+    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Country editor
+    </a>
+    <div class="collapse show" id="collapseExample">
+        <div class="form-group mt-3">
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input type="text" class="form-control ${(textError??)?string('is-invalid', '')}"
+                           value="<#if message??>${message.text}</#if>" name="name" placeholder="Введите название" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="position" placeholder="Введите должность"/>
+                </div>
+                <select class="custom-select" id="gender" name="gender">
+                    <#list genders as g>
+                        <option value="${g}">${g.getName()}</option>
+                    </#list>
+                </select>
+                <select class="custom-select" id="employeeType" name="employeeType">
+                    <#list types as t>
+                        <option value="${t}">${t.getName()}</option>
+                    </#list>
+                </select>
+                <input type="hidden" name="id" value="<#if message??>${message.id}</#if>" />
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</@c.page>
