@@ -2,7 +2,7 @@
 <@c.page>
     <#list info as r>
         <div>
-            ЦЕна продажи Report for ${r.getKey()}
+            Цена продажи для товара ${r.getKey()}
         </div>
         <table>
             <thead>

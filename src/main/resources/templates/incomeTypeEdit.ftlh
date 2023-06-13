@@ -2,18 +2,18 @@
 <@c.page>
     <div class="card my-3" data-id="${incomeType.id}">
         <div class="m-2">
-            <span>${incomeType.id}</span><br/>
-            <i>${incomeType.name}</i>
+            <span>Id: ${incomeType.id}</span><br/>
+            <i>Название: ${incomeType.name}</i>
         </div>
         <div class="card-footer text-muted container">
             <div class="row">
-                <a class="col btn btn-primary" href="/income/edit?incomeType=${incomeType.id}">Edit</a>
+                <a class="col btn btn-primary" href="/income/edit?incomeType=${incomeType.id}">Редактирование</a>
             </div>
         </div>
     </div>
 
     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        WokSchedule editor
+        Свернуть
     </a>
     <div class="collapse show" id="collapseExample">
         <div class="form-group mt-3">

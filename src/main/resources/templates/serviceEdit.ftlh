@@ -14,7 +14,7 @@
     </div>
 
     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Редактирование
+        Свернуть
     </a>
     <div class="collapse show" id="collapseExample">
         <div class="form-group mt-3">

@@ -12,10 +12,11 @@
             <div class="card my-3" data-id="${message.id}">
                 <div class="m-2">
                     <span>Id: ${message.id}</span><br/>
-                    <i>Контрагент: ${message.contractor.name}</i>
-                    <i>Сотрудник: ${message.getResponsibleEmployee().getName()}</i>
-                    <i>Организация: ${message.getOrganisation().getName()}</i>
+                    <i>Контрагент: ${message.contractor.name}</i><br/>
+                    <i>Сотрудник: ${message.getResponsibleEmployee().getName()}</i><br/>
+                    <i>Организация: ${message.getOrganisation().getName()}</i><br/>
                 </div>
+
                 <#if isAdmin>
                 <div class="card-footer text-muted container">
                     <div class="row">

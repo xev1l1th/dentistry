@@ -60,7 +60,7 @@ public class ContractorController {
 
     @PostMapping
     public String create(@RequestParam String name, @RequestParam(required = false) String inn, @RequestParam Country country) {
-        contractorService.createContractor(name, ContractorType.LOX, inn, country);
+        contractorService.createContractor(name, ContractorType.SELLER, inn, country);
         return "redirect:/contractors";
     }
 

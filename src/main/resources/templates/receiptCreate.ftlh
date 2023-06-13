@@ -3,7 +3,7 @@
 
     <div>
         <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-            Поступление товаров количество на основе цен на услуги по дате ${date}
+            Поступление товаров на основе цен на товары по дате ${date}
         </a>
     </div>
     <div class="collapse show" id="collapseExample">
@@ -16,7 +16,7 @@
                     </#list>
                 </select>
                 </br>
-                <label for="contractor">СОТРУДНКИ</label>
+                <label for="contractor">СОТРУДНИК</label>
                 <select class="custom-select" id="employee" name="employee">
                     <#list employees as emp>
                         <option value="${emp.getId()}">${emp.getName()}</option>
@@ -43,8 +43,8 @@
                     </#list>
                 </select>
                 </br>
-                <label for="contractor">ЦЕНА</label>
-                <input type="number" name="count" id="ocunt" placeholder="КОЛИЧЕСТВО"/>
+                <label for="contractor">Количество</label>
+                <input type="number" name="count" id="ocunt" placeholder="Кол-во"/>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Сохранить</button>
                 </div>

@@ -2,28 +2,28 @@
 <@c.page>
     <div class="card my-3" data-id="${e.id}">
         <div class="m-2">
-            <span>${e.id}</span><br/>
-            <i>${e.name}</i><br/>
-            <i>${e.position}</i><br/>
-            <i>${e.getGender().getName()}</i><br/>
-            <i>${e.getEmployeeType().getName()}</i><br/>
+            <span>Id: ${e.id}</span><br/>
+            <i>ФИО: ${e.name}</i><br/>
+            <i>Должность: ${e.position}</i><br/>
+            <i>Пол: ${e.getGender().getName()}</i><br/>
+            <i>Тип должности: ${e.getEmployeeType().getName()}</i><br/>
         </div>
         <div class="card-footer text-muted container">
             <div class="row">
-                <a class="col btn btn-primary" href="/employee/edit?employee=${e.id}">Edit</a>
+                <a class="col btn btn-primary" href="/employee/edit?employee=${e.id}">Редактирование</a>
             </div>
         </div>
     </div>
 
     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Country editor
+        Свернуть
     </a>
     <div class="collapse show" id="collapseExample">
         <div class="form-group mt-3">
             <form method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <input type="text" class="form-control ${(textError??)?string('is-invalid', '')}"
-                           value="<#if message??>${message.text}</#if>" name="name" placeholder="Введите название" />
+                           value="<#if message??>${message.text}</#if>" name="name" placeholder="Введите ФИО" />
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" name="position" placeholder="Введите должность"/>

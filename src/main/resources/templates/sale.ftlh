@@ -6,7 +6,7 @@
         <div class="form-group mt-3">
             <#if isAdmin>
                 <#list times as t>
-                    <a class="col btn btn-primary" href="/sale/create?time=${t}">Cоздать продажу цен на основе даты ${t}</a>
+                    <a class="col btn btn-primary" href="/sale/create?time=${t}">Cоздать продажу товаров на основе даты ${t}</a>
                 </#list>
             </#if>
         </div>
@@ -16,17 +16,17 @@
         <#list all as message>
             <div class="card my-3" data-id="${message.id}">
                 <div class="m-2">
-                    <span>${message.id}</span><br/>
-                    <i>${message.contractor.name}</i><br/>
-                    <i>${message.getResponsibleEmployee().getName()}</i><br/>
-                    <i>${message.getWarehouse().getName()}</i><br/>
+                    <span>Id: ${message.id}</span><br/>
+                    <i>Контрагент: ${message.contractor.name}</i><br/>
+                    <i>Ответственное лицо: ${message.getResponsibleEmployee().getName()}</i><br/>
+                    <i>Склад: ${message.getWarehouse().getName()}</i><br/>
                     <i>${message.getContractor().getName()}</i><br/>
                     <i>${message.getOrganisation().getName()}</i><br>
                 </div>
                 <div class="card-footer text-muted container">
                     <#if isAdmin>
                     <div class="row">
-                        <a class="col btn btn-primary" href="/sale/edit?productReceipt=${message.id}">OPEN</a>
+                        <a class="col btn btn-primary" href="/sale/edit?productReceipt=${message.id}">Открыть</a>
                     </div>
                     <div class="row">
                         <a class="col btn btn-primary" href="/sale/delete?productReceipt=${message.id}">Удалить</a>
@@ -35,7 +35,6 @@
                 </div>
             </div>
         <#else>
-            No data
         </#list>
     </div>
 </@c.page>

@@ -6,7 +6,7 @@
     <div class="form-group mt-3">
         <#if isAdmin>
         <#list times as t>
-            <a class="col btn btn-primary" href="/receipt/create?time=${t}">Cоздать ввод цен на основе даты ${t}</a>
+            <a class="col btn btn-primary" href="/receipt/create?time=${t}">Cоздать поступление товара на основе даты ${t}</a>
         </#list>
         </#if>
     </div>
@@ -16,12 +16,12 @@
         <#list all as message>
             <div class="card my-3" data-id="${message.id}">
                 <div class="m-2">
-                    <span>${message.id}</span><br/>
-                    <i>${message.contractor.name}</i><br/>
-                    <i>${message.getResponsibleEmployee().getName()}</i><br/>
-                    <i>${message.getWarehouse().getName()}</i><br/>
-                    <i>${message.getContractor().getName()}</i><br/>
-                    <i>${message.getOrganisation().getName()}</i><br>
+                    <span>Id: ${message.id}</span><br/>
+                    <i>Название: ${message.contractor.name}</i><br/>
+                    <i>Ответственное лицо: ${message.getResponsibleEmployee().getName()}</i><br/>
+                    <i>Склад: ${message.getWarehouse().getName()}</i><br/>
+                    <i>Контрагент: ${message.getContractor().getName()}</i><br/>
+                    <i>Организация: ${message.getOrganisation().getName()}</i><br>
                 </div>
                 <div class="card-footer text-muted container">
                     <#if isAdmin>
@@ -35,7 +35,6 @@
                 </div>
             </div>
         <#else>
-            No data
         </#list>
     </div>
 </@c.page>

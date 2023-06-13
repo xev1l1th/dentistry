@@ -1,7 +1,7 @@
 <#import "parts/common.ftlh" as c>
 <@c.page>
     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-       Service Price editor for ${sdp.getId()}
+       Редактирование для услуги ${sdp.getId()}
     </a>
     <div class="collapse show" id="collapseExample">
         <div class="form-group mt-3">

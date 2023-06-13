@@ -2,7 +2,7 @@
 <@c.page>
     <#list report as r>
         <div>
-            Report for ${r.getKey()}
+            Отчет по ${r.getKey()}
         </div>
     <table>
         <thead>
@@ -15,7 +15,7 @@
         <#list r.getValue() as s>
             <tr>
                 <td>
-                    инфа по складу ${s.getWarehouse()}
+                    Информация по складу ${s.getWarehouse()}
                 </td>
             </tr>
             <#list s.getProductInfoAsSet() as info>
@@ -26,7 +26,7 @@
         </#list>
             <tr>
                 <td>
-                    Тотал продуктов ${s.getTotal()}
+                    Всего товаров ${s.getTotal()}
                 </td>
             </tr>
         </#list>

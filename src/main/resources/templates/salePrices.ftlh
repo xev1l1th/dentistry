@@ -3,16 +3,16 @@
 <@c.page>
 
     <#if isAdmin>
-     <a class="col btn btn-primary" href="/saleprices/create">Cоздать цену на продажу</a>
+     <a class="col btn btn-primary" href="/saleprices/create">Cоздать цену товара</a>
     </#if>
     <div class="card-columns" id="message-list">
         <#list spp as message>
             <div class="card my-3" data-id="${message.id}">
                 <div class="m-2">
-                    <span>${message.id}</span><br/>
-                    <i>${message.contractor.name}</i>
-                    <i>${message.getResponsibleEmployee().getName()}</i>
-                    <i>${message.getCreatedDate().toString()}</i>
+                    <span>Id: ${message.id}</span><br/>
+                    <i>Контрагент: ${message.contractor.name}</i><br/>
+                    <i>Ответственное лицо: ${message.getResponsibleEmployee().getName()}</i><br/>
+                    <i>${message.getCreatedDate().toString()}</i><br/>
                 </div>
                 <div class="card-footer text-muted container">
                     <#if isAdmin>

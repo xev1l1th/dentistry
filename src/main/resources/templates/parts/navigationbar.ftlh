@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
 <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
     <div class="container">
-        <a class="navbar-brand" href="#">Dentistry</a>
+        <a class="navbar-brand" href="#">Орен-Мед</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbar-example" aria-controls="navbar-example"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@
                         Справочники
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/workschedule">Виды графиков работ</a>
+
                         <a class="dropdown-item" href="/income">Виды доходов и расходов</a>
                         <!--
                         <div class="dropdown-divider"></div>
@@ -60,7 +60,7 @@
                         <a class="dropdown-item" href="/servicedelivery">Оказание услуг</a>
                         <a class="dropdown-item" href="/receipt">Поступление товара</a>
                         <a class="dropdown-item" href="/sale">Продажа товара</a>
-                        <a class="dropdown-item" href="/saleprices">Установк цен на товары</a>
+                        <a class="dropdown-item" href="/saleprices">Установка цен на товары</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -76,6 +76,7 @@
                         <div class="dropdown-divider"></div>
                         -->
                         <a class="dropdown-item" href="/orgprices">Прайс лист товаров</a>
+                        <a class="dropdown-item" href="/popularity">Популярность товаров</a>
                     </div>
                 </li>
             </ul>

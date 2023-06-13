@@ -17,7 +17,7 @@
 
     <#if isAdmin>
         <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-            Редактирование
+            Свернуть
         </a>
     </#if>
     <div class="collapse show" id="collapseExample">

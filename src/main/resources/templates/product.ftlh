@@ -11,10 +11,10 @@
             <form method="post" action="/product" enctype="multipart/form-data">
                 <div class="form-group">
                     <input type="text" class="form-control ${(textError??)?string('is-invalid', '')}"
-                           value="<#if message??>${message.text}</#if>" name="name" placeholder="Введите название" />
+                           value="<#if message??>${message.text}</#if>" name="name" placeholder="Введите наименование" />
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="description" placeholder="Введите description"/>
+                    <input type="text" class="form-control" name="description" placeholder="Введите описание"/>
                 </div>
 
                 <input type="hidden" name="id" value="<#if message??>${message.id}</#if>" />
@@ -30,9 +30,9 @@
         <#list products as p>
             <div class="card my-3" data-id="${p.id}">
                 <div class="m-2">
-                    <span>${p.id}</span><br/>
-                    <i>${p.name}</i><br/>
-                    <i>${p.description}</i><br/>
+                    <span>Id: ${p.id}</span><br/>
+                    <i>Наименование: ${p.name}</i><br/>
+                    <i>Описание: ${p.description}</i><br/>
                 </div>
                 <div class="card-footer text-muted container">
                     <#if isAdmin>

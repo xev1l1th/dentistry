@@ -1,6 +1,7 @@
 package org.huerg.warehouse.controller.document;
 
 import lombok.RequiredArgsConstructor;
+import org.huerg.warehouse.StringUtil;
 import org.huerg.warehouse.data.directory.Contractor;
 import org.huerg.warehouse.data.directory.Employee;
 import org.huerg.warehouse.data.directory.Product;
@@ -52,9 +53,10 @@ public class ContractorProductPriceReportController {
     public String postCreate(@RequestParam Product product,
                              @RequestParam Employee employee,
                              @RequestParam Contractor contractor,
-                             @RequestParam Double price) {
+                             @RequestParam Double price,
+                             @RequestParam String date) {
         ProductPrice save = productPriceServeice.save(product, price);
-        service.createPrice(save, LocalDateTime.now(), employee, contractor);
+        service.createPrice(save, StringUtil.convertToDate(date), employee, contractor);
         return "redirect:/contrproductprices";
     }
 

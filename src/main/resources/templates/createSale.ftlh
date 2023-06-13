@@ -3,7 +3,7 @@
 
     <div>
         <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-            продажа товаров количество на основе цен на товары по дате ${date}
+            Продажа товаров на основе цен на товары по дате ${date}
         </a>
     </div>
     <div class="collapse show" id="collapseExample">

@@ -7,13 +7,13 @@
         </div>
         <div class="card-footer text-muted container">
             <div class="row">
-                <a class="col btn btn-primary" href="/country/edit?country=${country.id}">Edit</a>
+                <a class="col btn btn-primary" href="/country/edit?country=${country.id}">Редактирование</a>
             </div>
         </div>
     </div>
 
     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Изменение страны
+        Свернуть
     </a>
     <div class="collapse show" id="collapseExample">
         <div class="form-group mt-3">

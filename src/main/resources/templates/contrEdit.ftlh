@@ -8,13 +8,13 @@
             <i>Дата: ${cpp.getCreatedDate().toString()}</i><br/>
             <#list cppPrices as price>
                 <i>${price.getProduct().getName()} cтоит ${price.getPrice()} рублей</i><br/>
-                <a class="col btn btn-primary" href="/contrproductprices/editprice?price=${price.id}">Редактировать</a>
+                <a class="col btn btn-primary" href="/contrproductprices/editprice?price=${price.id}">Редактирование</a>
             </#list>
         </div>
     </div>
 
     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Добавить товаро цену поставщиков editor
+        Свернуть
     </a>
     <div class="collapse show" id="collapseExample">
         <div class="form-group mt-3">

@@ -3,7 +3,7 @@
 <@c.page>
     <#if isAdmin>
         <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-            Создать вид дохода
+            Создать вид доходов и расходов
         </a>
     </#if>
 <div class="collapse" id="collapseExample">
@@ -26,8 +26,8 @@
     <#list incomes as message>
         <div class="card my-3" data-id="${message.id}">
             <div class="m-2">
-                <span>${message.id}</span><br/>
-                <i>${message.name}</i>
+                <span>Id: ${message.id}</span><br/>
+                <i>Название: ${message.name}</i>
             </div>
             <div class="card-footer text-muted container">
                 <#if isAdmin>
@@ -41,7 +41,6 @@
             </div>
         </div>
     <#else>
-        No data
     </#list>
 </div>
 </@c.page>

@@ -2,19 +2,19 @@
 <@c.page>
     <div class="card my-3" data-id="${spp.id}">
         <div class="m-2">
-            <span>${spp.id}</span><br/>
-            <i>${spp.contractor.name}</i><br/>
-            <i>${spp.getResponsibleEmployee().getName()}</i><br/>
+            <span>Id: ${spp.id}</span><br/>
+            <i>Контрагент: ${spp.contractor.name}</i><br/>
+            <i>Ответственное лицо: ${spp.getResponsibleEmployee().getName()}</i><br/>
             <i>${spp.getCreatedDate().toString()}</i><br/>
             <#list spp.getProductPrices() as price>
                 <i>${price.getProduct().getName()} продается за ${price.getPrice()} рублей</i><br/>
-                <a class="col btn btn-primary" href="/saleprices/editprice?price=${price.id}">Edit</a>
+                <a class="col btn btn-primary" href="/saleprices/editprice?price=${price.id}">Редактирование</a>
             </#list>
         </div>
     </div>
 
     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Добавить  цену на продажу editor
+        Свернуть
     </a>
     <div class="collapse show" id="collapseExample">
         <div class="form-group mt-3">

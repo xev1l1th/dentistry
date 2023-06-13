@@ -2,6 +2,7 @@ package org.huerg.warehouse.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping("")
@@ -23,8 +24,12 @@ public class MainController {
         return "redirect:/";
     }
 
-    @GetMapping("/сss/**")
+    @GetMapping("css/**")
     public String getC() {
+        return "redirect:/";
+    }
+    @PostMapping("css/**")
+    public String getccc() {
         return "redirect:/";
     }
 }

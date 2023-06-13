@@ -10,7 +10,7 @@
         <#list cpp as message>
             <div class="card my-3" data-id="${message.id}">
                 <div class="m-2">
-                    <span>${message.id}</span><br/>
+                    <span>Id: ${message.id}</span><br/>
                     <i>Наименование контрагента: ${message.contractor.name}</i><br/>
                     <i>Ответственное лицо: ${message.getResponsibleEmployee().getName()}</i><br/>
                     <i>Дата: ${message.getCreatedDate().toString()}</i>
@@ -27,7 +27,6 @@
                 </div>
             </div>
         <#else>
-            No data
         </#list>
     </div>
 </@c.page>

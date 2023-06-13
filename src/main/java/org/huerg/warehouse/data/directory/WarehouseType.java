@@ -7,7 +7,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum WarehouseType {
 
-    PERSONAL("персонал"), RENTED("рентед"), SUPER_SMALL("микросмол");
+    PERSONAL("Собственный"), RENTED("Арендуемый"), OPEN("Открытый");
 
     private final String name;
 }

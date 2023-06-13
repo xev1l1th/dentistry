@@ -15,10 +15,10 @@
                            value="<#if message??>${message.text}</#if>" name="name" placeholder="Введите название" />
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="address" placeholder="Введите адресс"/>
+                    <input type="text" class="form-control" name="address" placeholder="Введите адрес"/>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="inn" placeholder="Введите инн"/>
+                    <input type="text" class="form-control" name="inn" placeholder="Введите ИНН"/>
                 </div>
 
                 <input type="hidden" name="id" value="<#if message??>${message.id}</#if>" />
@@ -34,11 +34,11 @@
         <#list organizations as message>
             <div class="card my-3" data-id="${message.id}">
                 <div class="m-2">
-                    <span>${message.id}</span><br/>
-                    <i>${message.name}</i>
-                    <i>${message.address}</i>
-                    <i>${message.inn}</i>
-                    <i>${message.createdTime.toString()}</i>
+                    <span>Id: ${message.id}</span><br/>
+                    <i>Название: ${message.name}</i><br/>
+                    <i>Адрес: ${message.address}</i><br/>
+                    <i>ИНН: ${message.inn}</i><br/>
+                    <i>${message.createdTime.toString()}</i><br/>
                 </div>
                 <div class="card-footer text-muted container">
                     <#if isAdmin>
@@ -52,7 +52,6 @@
                 </div>
             </div>
         <#else>
-            No data
         </#list>
     </div>
 </@c.page>

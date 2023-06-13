@@ -54,7 +54,7 @@ public class EmployeeController {
         return "redirect:/employee";
     }
 
-    @GetMapping("/delte")
+    @GetMapping("/delete")
     public String postEdieeet(@RequestParam Employee employee
     ) {
         employeeService.delete(employee);

@@ -7,7 +7,7 @@ import lombok.Getter;
 @Getter
 public enum EmployeeType {
 
-    SUPERVISOR("БОС"), SUBORDINATE("СОТРУДНИК");
+    SUPERVISOR("Руководитель"), SUBORDINATE("Подчиненный");
 
     private final String name;
 }

@@ -2,11 +2,11 @@
 <@c.page>
     <div class="card my-3" data-id="${receipt.id}">
         <div class="m-2">
-            <span>${receipt.id}</span><br/>
-            <i>${receipt.contractor.name}</i><br/>
-            <i>${receipt.getResponsibleEmployee().getName()}</i><br/>
-            <i>${receipt.getWarehouse().getName()}</i><br/>
-            <i>${receipt.getOrganisation().getName()}</i><br/>
+            <span>Id: ${receipt.id}</span><br/>
+            <i>Контрагент: ${receipt.contractor.name}</i><br/>
+            <i>Ответственное лицо: ${receipt.getResponsibleEmployee().getName()}</i><br/>
+            <i>Склад: ${receipt.getWarehouse().getName()}</i><br/>
+            <i>Организация: ${receipt.getOrganisation().getName()}</i><br/>
             <#list receipt.getContractorProductPrice() as price>
                 <!--<a class="btn btn-primary" href="/servicedelivery/editprice?serviceDeliveryPrice=${price.id}">Edit</a> -->
                 <i>${price.getProduct().getName()} cтоит  ${price.getReceivePrice()} рублей в количесве ${price.getReceiptCount()} и сумма ${price.getTotalSum()}</i><br/>
@@ -15,7 +15,7 @@
     </div>
 
     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Добавить поступление цену поставщиков editor
+        Свернуть
     </a>
     <div class="collapse show" id="collapseExample">
         <div class="form-group mt-3">
