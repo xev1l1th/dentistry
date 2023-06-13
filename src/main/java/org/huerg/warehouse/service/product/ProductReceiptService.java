@@ -85,4 +85,8 @@ public class ProductReceiptService {
         productReceipt.addProductReceipt(save);
         productReceiptRepo.save(productReceipt);
     }
+
+    public void delete(ProductReceipt productReceipt) {
+        productReceiptRepo.delete(productReceipt);
+    }
 }

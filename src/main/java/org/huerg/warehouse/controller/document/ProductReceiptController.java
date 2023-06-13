@@ -87,4 +87,10 @@ public class ProductReceiptController {
         return "redirect:/receipt";
     }
 
+    @GetMapping("/delete")
+    public String postEditP(@RequestParam ProductReceipt productReceipt) {
+        productReceiptService.delete(productReceipt);
+        return "redirect:/receipt";
+    }
+
 }

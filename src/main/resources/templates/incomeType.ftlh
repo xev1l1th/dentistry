@@ -1,11 +1,14 @@
 <#import "parts/common.ftlh" as c>
+<#include "parts/secur.ftlh">
 <@c.page>
-<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Создать вид дохода
-</a>
+    <#if isAdmin>
+        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Создать вид дохода
+        </a>
+    </#if>
 <div class="collapse" id="collapseExample">
     <div class="form-group mt-3">
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" action="/income" enctype="multipart/form-data">
             <div class="form-group">
                 <input type="text" class="form-control ${(textError??)?string('is-invalid', '')}"
                        value="<#if message??>${message.text}</#if>" name="name" placeholder="Введите название" />
@@ -27,9 +30,14 @@
                 <i>${message.name}</i>
             </div>
             <div class="card-footer text-muted container">
-                <div class="row">
-                    <a class="col btn btn-primary" href="/income/edit?incomeType=${message.id}">Edit</a>
-                </div>
+                <#if isAdmin>
+                    <div class="row">
+                        <a class="col btn btn-primary" href="/income/edit?incomeType=${message.id}">Редактировать</a>
+                    </div>
+                    <div class="row">
+                        <a class="col btn btn-primary" href="/income/delete?incomeType=${message.id}">удалить</a>
+                    </div>
+                </#if>
             </div>
         </div>
     <#else>

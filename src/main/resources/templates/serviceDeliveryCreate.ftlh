@@ -1,9 +1,10 @@
 <#import "parts/common.ftlh" as c>
+<#include "parts/secur.ftlh">
 <@c.page>
 
     <div>
     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        ВВОд цен на услуги
+        Оказание услуги
     </a>
     </div>
     <div class="collapse show" id="collapseExample">
@@ -16,7 +17,7 @@
                     </#list>
                 </select>
                 </br>
-                <label for="contractor">СОТРУДНКИ</label>
+                <label for="contractor">СОТРУДНИК</label>
                 <select class="custom-select" id="employee" name="employee">
                     <#list employees as emp>
                         <option value="${emp.getId()}">${emp.getName()}</option>
@@ -39,9 +40,11 @@
                 </br>
                 <label for="contractor">ЦЕНА</label>
                 <input type="number" name="price" id="price" placeholder="ЦЕНА"/>
+                <#if isAdmin>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Сохранить</button>
                 </div>
+                </#if>
             </form>
         </div>
     </div>

@@ -94,4 +94,10 @@ public class ContractorProductPriceReportController {
         return "redirect:/contrproductprices";
     }
 
+    @GetMapping("/delete")
+    public String ddd(@RequestParam ContractorProductPrice cpp){
+        service.delete(cpp);
+        return "redirect:/contrproductprices";
+    }
+
 }

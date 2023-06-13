@@ -32,4 +32,8 @@ public class OrganizationService {
     public void update(Organisation organisation) {
         organizationRepo.save(organisation);
     }
+
+    public void delete(Organisation organisation) {
+        organizationRepo.delete(organisation);
+    }
 }

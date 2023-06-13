@@ -1,12 +1,15 @@
 <#import "parts/common.ftlh" as c>
+<#include "parts/secur.ftlh">
 <@c.page>
 
+    <#if isAdmin>
     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        ВВОд цен поставщиков создать
+        Ввод цен поставщиков
     </a>
+    </#if>
     <div class="collapse show" id="collapseExample">
         <div class="form-group mt-3">
-            <form method="post" enctype="multipart/form-data">
+            <form method="post" action="/contrproductprices/create" enctype="multipart/form-data">
                 <select class="custom-select" id="contractor" name="contractor">
                     <#list contractors as con>
                         <option value="${con.getId()}">${con.getName()}</option>

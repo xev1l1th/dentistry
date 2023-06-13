@@ -52,6 +52,12 @@ public class WarehouseController {
         return "redirect:/warehouse";
     }
 
+    @GetMapping("/delete")
+    public String putEdits(@RequestParam Warehouse warehouse) {
+        warehouseService.delete(warehouse);
+        return "redirect:/warehouse";
+    }
+
     @PostMapping
     public String create(@RequestParam String name,
                          @RequestParam Employee employee,

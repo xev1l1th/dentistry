@@ -28,4 +28,7 @@ public class IncomeService {
         return repo.findAll();
     }
 
+    public void delete(IncomeType incomeType) {
+        repo.delete(incomeType);
+    }
 }

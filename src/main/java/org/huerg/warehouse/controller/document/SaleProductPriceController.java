@@ -93,4 +93,10 @@ public class SaleProductPriceController {
         return "redirect:/saleprices";
     }
 
+    @GetMapping("/delete")
+    public String postDelete(@RequestParam SaleProductPriceSetting spp) {
+        service.deleteSale(spp);
+        return "redirect:/saleprices";
+    }
+
 }

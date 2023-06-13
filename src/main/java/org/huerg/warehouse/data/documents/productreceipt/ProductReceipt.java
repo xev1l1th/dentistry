@@ -27,19 +27,19 @@ public class ProductReceipt {
 
     private LocalDateTime localDateTime;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "employee_id", referencedColumnName = "id")
     private Employee responsibleEmployee;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "contractor_id", referencedColumnName = "id")
     private Contractor contractor;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "organisation_id", referencedColumnName = "id")
     private Organisation organisation;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "warhouse_id", referencedColumnName = "id")
     private Warehouse warehouse;
 

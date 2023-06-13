@@ -66,4 +66,8 @@ public class ContractorPriceReportService {
     public void update(ContractorProductPrice cpp) {
         repo.save(cpp);
     }
+
+    public void delete(ContractorProductPrice cpp) {
+        repo.delete(cpp);
+    }
 }

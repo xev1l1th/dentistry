@@ -97,4 +97,10 @@ public class ProductSaleController {
         return "redirect:/sale";
     }
 
+    @GetMapping("/delete")
+    public String postDelete(@RequestParam ProductSale productReceipt) {
+        productSaleService.delete(productReceipt);
+        return "redirect:/sale";
+    }
+
 }

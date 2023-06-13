@@ -24,14 +24,14 @@ public class SaleProductPriceSetting {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "contractor_id", referencedColumnName = "id")
     private Contractor contractor;
 
     @CreatedDate
     private LocalDateTime createdDate;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "employee_id", referencedColumnName = "id")
     private Employee responsibleEmployee;
 

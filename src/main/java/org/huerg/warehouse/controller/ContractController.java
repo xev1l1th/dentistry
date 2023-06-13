@@ -54,6 +54,12 @@ public class ContractController {
         contractService.update(contract);
         return "redirect:/contracts";
     }
+
+    @GetMapping("/delete")
+    public String dele(@RequestParam Contract contract) {
+        contractService.delete(contract);
+        return "redirect:/contracts";
+    }
     @PostMapping
     public String create(@RequestParam String name, @RequestParam String description, @RequestParam Contractor contractor, @RequestParam Organisation organisation) {
         contractService.createContract(name, contractor, organisation, description);

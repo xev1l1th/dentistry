@@ -36,6 +36,12 @@ public class IncomeTypeController {
         return "redirect:/income";
     }
 
+    @GetMapping("/delete")
+    public String delele(@RequestParam IncomeType incomeType){
+        incomeService.delete(incomeType);
+        return "redirect:/income";
+    }
+
     @PostMapping
     public String create(@RequestParam String name) {
         incomeService.create(name);

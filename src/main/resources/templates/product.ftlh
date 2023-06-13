@@ -1,11 +1,14 @@
 <#import "parts/common.ftlh" as c>
+<#include "parts/secur.ftlh">
 <@c.page>
-    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Создать товар
-    </a>
+    <#if isAdmin>
+        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Создать товар
+        </a>
+    </#if>
     <div class="collapse" id="collapseExample">
         <div class="form-group mt-3">
-            <form method="post" enctype="multipart/form-data">
+            <form method="post" action="/product" enctype="multipart/form-data">
                 <div class="form-group">
                     <input type="text" class="form-control ${(textError??)?string('is-invalid', '')}"
                            value="<#if message??>${message.text}</#if>" name="name" placeholder="Введите название" />
@@ -32,9 +35,14 @@
                     <i>${p.description}</i><br/>
                 </div>
                 <div class="card-footer text-muted container">
-                    <div class="row">
-                        <a class="col btn btn-primary" href="/product/edit?product=${p.id}">Edit</a>
-                    </div>
+                    <#if isAdmin>
+                        <div class="row">
+                            <a class="col btn btn-primary" href="/product/edit?product=${p.id}">Редактировать</a>
+                        </div>
+                        <div class="row">
+                            <a class="col btn btn-primary" href="/product/delete?product=${p.id}">Удалить</a>
+                        </div>
+                    </#if>
                 </div>
             </div>
         <#else>

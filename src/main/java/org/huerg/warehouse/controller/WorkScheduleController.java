@@ -44,4 +44,10 @@ public class WorkScheduleController {
         return "redirect:/workschedule";
     }
 
+    @GetMapping("/delete")
+    public String delete(@RequestParam WorkSchedule workSchedule) {
+        workScheduleService.delete(workSchedule);
+        return "redirect:/workschedule";
+    }
+
 }

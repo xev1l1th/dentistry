@@ -22,7 +22,7 @@ public class Service {
 
     private String description;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "servicetype_id", referencedColumnName = "id")
     private ServiceType serviceType;
 

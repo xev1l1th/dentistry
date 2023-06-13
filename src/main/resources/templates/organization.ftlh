@@ -1,11 +1,15 @@
 <#import "parts/common.ftlh" as c>
+<#include "parts/secur.ftlh">
 <@c.page>
-    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Создать организацию
-    </a>
+
+    <#if isAdmin>
+        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Создать организацию
+        </a>
+    </#if>
     <div class="collapse" id="collapseExample">
         <div class="form-group mt-3">
-            <form method="post" enctype="multipart/form-data">
+            <form method="post" action="/organization" enctype="multipart/form-data">
                 <div class="form-group">
                     <input type="text" class="form-control ${(textError??)?string('is-invalid', '')}"
                            value="<#if message??>${message.text}</#if>" name="name" placeholder="Введите название" />
@@ -37,9 +41,14 @@
                     <i>${message.createdTime.toString()}</i>
                 </div>
                 <div class="card-footer text-muted container">
+                    <#if isAdmin>
                     <div class="row">
-                        <a class="col btn btn-primary" href="/organization/edit?organisation=${message.id}">Edit</a>
+                        <a class="col btn btn-primary" href="/organization/edit?organisation=${message.id}">Редактировать</a>
                     </div>
+                    <div class="row">
+                        <a class="col btn btn-primary" href="/organization/delete?organisation=${message.id}">Удалить</a>
+                    </div>
+                    </#if>
                 </div>
             </div>
         <#else>

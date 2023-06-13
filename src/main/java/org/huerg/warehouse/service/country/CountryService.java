@@ -28,4 +28,8 @@ public class CountryService {
     public void update(Country country) {
         countryRepo.save(country);
     }
+
+    public void delete(Country country) {
+        countryRepo.delete(country);
+    }
 }

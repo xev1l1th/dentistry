@@ -52,6 +52,12 @@ public class ContractorController {
         return "redirect:/contractors";
     }
 
+    @GetMapping("/delete")
+    public String delete(@RequestParam Contractor contractor){
+        contractorService.delete(contractor);
+        return "redirect:/contractors";
+    }
+
     @PostMapping
     public String create(@RequestParam String name, @RequestParam(required = false) String inn, @RequestParam Country country) {
         contractorService.createContractor(name, ContractorType.LOX, inn, country);

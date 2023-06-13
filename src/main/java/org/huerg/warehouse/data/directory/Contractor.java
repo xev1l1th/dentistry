@@ -25,7 +25,7 @@ public class Contractor {
 
     private String inn;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "country_id", referencedColumnName = "id")
     private Country country;
 

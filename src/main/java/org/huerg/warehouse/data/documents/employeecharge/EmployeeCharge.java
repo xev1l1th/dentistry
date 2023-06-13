@@ -21,15 +21,15 @@ public class EmployeeCharge {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "employee_id", referencedColumnName = "id")
     private Employee responsibleEmployee;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "workschedule_id", referencedColumnName = "id")
     private WorkSchedule workSchedule;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "employeeChargeType_id", referencedColumnName = "id")
     private EmployeeChargeType employeeChargeType;
 

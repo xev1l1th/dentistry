@@ -65,6 +65,12 @@ public class ServiceDeliveryController {
         return "serviceDeliveryEdit";
     }
 
+    @GetMapping("/delete")
+    public String getDelete(@RequestParam ServiceDelivery serviceDelivery) {
+        service.delete(serviceDelivery);
+        return "redirect:/servicedelivery";
+    }
+
     @PostMapping("/edit")
     public String postEdit(@RequestParam ServiceDelivery serviceDelivery,
                            @RequestParam Service service,

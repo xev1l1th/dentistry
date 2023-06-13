@@ -36,4 +36,8 @@ public class EmployeeService {
     public void update(Employee employee) {
         repo.save(employee);
     }
+
+    public void delete(Employee employee) {
+        repo.delete(employee);
+    }
 }

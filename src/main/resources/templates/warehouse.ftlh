@@ -1,11 +1,15 @@
 <#import "parts/common.ftlh" as c>
+<#include "parts/secur.ftlh">
+
 <@c.page>
-    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Создать склад
-    </a>
+    <#if isAdmin>
+        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Создать склад
+        </a>
+    </#if>
     <div class="collapse" id="collapseExample">
         <div class="form-group mt-3">
-            <form method="post" enctype="multipart/form-data">
+            <form method="post" action="/warehouse" enctype="multipart/form-data">
                 <div class="form-group">
                     <input type="text" class="form-control ${(textError??)?string('is-invalid', '')}"
                            value="<#if message??>${message.text}</#if>" name="name" placeholder="Введите название" />
@@ -33,19 +37,26 @@
         <#list warehouses as w>
             <div class="card my-3" data-id="${w.id}">
                 <div class="m-2">
-                    <span>${w.id}</span><br/>
-                    <i>${w.name}</i><br/>
-                    <i>${w.getResponsibleEmployee().getName()}</i><br/>
-                    <i>${w.getDocumentType().getName()}</i><br/>
+                    <span>Id: ${w.id}</span><br/>
+                    <i>Название: ${w.name}</i><br/>
+                    <i>Имя ответственного: ${w.getResponsibleEmployee().getName()}</i><br/>
+                    <i>Тип документа: ${w.getDocumentType().getName()}</i><br/>
                 </div>
+                <#if isAdmin>
                 <div class="card-footer text-muted container">
                     <div class="row">
-                        <a class="col btn btn-primary" href="/warehouse/edit?warehouse=${w.id}">Edit</a>
+                        <a class="col btn btn-primary" href="/warehouse/edit?warehouse=${w.id}">Редактировать</a>
                     </div>
                 </div>
+
+                <div class="card-footer text-muted container">
+                    <div class="row">
+                        <a class="col btn btn-primary" href="/warehouse/delete?warehouse=${w.id}">Удалить</a>
+                    </div>
+                </div>
+                </#if>
             </div>
         <#else>
-            No data
         </#list>
     </div>
 </@c.page>

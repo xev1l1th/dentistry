@@ -24,7 +24,7 @@ public class ServiceDeliveryPrice {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinTable(name = "price_service", joinColumns = @JoinColumn(name = "price_id"), inverseJoinColumns = @JoinColumn(name = "service_id"))
     private Service product;
 

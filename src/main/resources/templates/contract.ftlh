@@ -1,17 +1,21 @@
 <#import "parts/common.ftlh" as c>
+<#include "parts/secur.ftlh">
 <@c.page>
-    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Создать договор
-    </a>
+
+    <#if isAdmin>
+        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Создать договор
+        </a>
+    </#if>
     <div class="collapse" id="collapseExample">
         <div class="form-group mt-3">
-            <form method="post" enctype="multipart/form-data">
+            <form method="post" action="/contracts" enctype="multipart/form-data">
                 <div class="form-group">
                     <input type="text" class="form-control ${(textError??)?string('is-invalid', '')}"
                            value="<#if message??>${message.text}</#if>" name="name" placeholder="Введите название" />
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="description" placeholder="Введите description"/>
+                    <input type="text" class="form-control" name="description" placeholder="Введите описание"/>
                 </div>
                 <select class="custom-select" id="contractor" name="contractor">
                     <#list contractors as con>
@@ -36,20 +40,25 @@
         <#list contracts as message>
             <div class="card my-3" data-id="${message.id}">
                 <div class="m-2">
-                    <span>${message.id}</span><br/>
-                    <i>${message.name}</i><br/>
-                    <i>${message.description}</i><br/>
-                    <i>${message.organisation.name}</i><br/>
-                    <i>${message.owner.name}</i><br/>
+                    <span>Id: ${message.id}</span><br/>
+                    <i>Название: ${message.name}</i><br/>
+                    <i>Описание: ${message.description}</i><br/>
+                    <i>Название организации: ${message.organisation.name}</i><br/>
+                    <i>Владелец: ${message.owner.name}</i><br/>
                 </div>
                 <div class="card-footer text-muted container">
-                    <div class="row">
-                        <a class="col btn btn-primary" href="/contracts/edit?contract=${message.id}">Edit</a>
-                    </div>
+                    <#if isAdmin>
+                        <div class="row">
+                            <a class="col btn btn-primary" href="/contracts/edit?contract=${message.id}">Редактировать</a>
+                        </div>
+
+                        <div class="row">
+                            <a class="col btn btn-primary" href="/contracts/delete?contract=${message.id}">Удалить</a>
+                        </div>
+                    </#if>
                 </div>
             </div>
         <#else>
-            No data
         </#list>
     </div>
 </@c.page>

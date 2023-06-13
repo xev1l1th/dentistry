@@ -42,11 +42,19 @@ public class ProductController {
         return "redirect:/product";
 
     }
+
+    @GetMapping("/delete")
+    public String postEdit(@RequestParam Product product){
+        productService.delete(product);
+        return "redirect:/product";
+
+    }
     @PostMapping
     public String create(@RequestParam String name, @RequestParam String description) {
         productService.create(name, description);
         return "redirect:/product";
     }
+
 
 
 }

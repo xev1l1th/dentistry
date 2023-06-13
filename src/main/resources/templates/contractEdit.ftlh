@@ -2,21 +2,21 @@
 <@c.page>
     <div class="card my-3" data-id="${contract.id}">
         <div class="m-2">
-            <span>${contract.id}</span><br/>
-            <i>${contract.name}</i><br/>
-            <i>${contract.description}</i><br/>
-            <i>${contract.organisation.name}</i><br/>
-            <i>${contract.owner.name}</i><br/>
+            <span>Id: ${contract.id}</span><br/>
+            <i>Название: ${contract.name}</i><br/>
+            <i>Описание: ${contract.description}</i><br/>
+            <i>Название организации: ${contract.organisation.name}</i><br/>
+            <i>Владелец: ${contract.owner.name}</i><br/>
         </div>
         <div class="card-footer text-muted container">
             <div class="row">
-                <a class="col btn btn-primary" href="/contracts/edit?contract=${contract.id}">Edit</a>
+                <a class="col btn btn-primary" href="/contracts/edit?contract=${contract.id}">Редактировать</a>
             </div>
         </div>
     </div>
 
     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Country editor
+        Редактирование договора
     </a>
     <div class="collapse show" id="collapseExample">
         <div class="form-group mt-3">
@@ -26,7 +26,7 @@
                            value="<#if message??>${message.text}</#if>" name="name" placeholder="Введите название" />
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="description" placeholder="Введите description"/>
+                    <input type="text" class="form-control" name="description" placeholder="Введите описание"/>
                 </div>
                 <select class="custom-select" id="contractor" name="contractor">
                     <#list contractors as con>
@@ -39,7 +39,7 @@
                     </#list>
                 </select>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="inn" placeholder="Введите inn"/>
+                    <input type="text" class="form-control" name="inn" placeholder="Введите ИНН"/>
                 </div>
                 <input type="hidden" name="id" value="<#if message??>${message.id}</#if>" />
                 <div class="form-group">

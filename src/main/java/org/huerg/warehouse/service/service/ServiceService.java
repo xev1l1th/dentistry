@@ -87,4 +87,12 @@ public class ServiceService {
     public void update(ServiceDeliveryPrice serviceDeliveryPrice) {
         serviceDeliveryPriceRepo.save(serviceDeliveryPrice);
     }
+
+    public void delete(ServiceDelivery serviceDelivery) {
+        serviceDeliveryRepo.delete(serviceDelivery);
+    }
+
+    public void delete(org.huerg.warehouse.data.directory.Service serviceDelivery) {
+        serviceRepo.delete(serviceDelivery);
+    }
 }

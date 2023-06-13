@@ -7,7 +7,7 @@ import lombok.Getter;
 @Getter
 public enum Gender {
 
-    MALE("мужской"), FEMALE("женский"), OPTIMUS_PRIME("оптимус_прайм");
+    MALE("мужской"), FEMALE("женский");
 
     private final String name;
 }

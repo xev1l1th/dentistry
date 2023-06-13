@@ -2,10 +2,10 @@
 <@c.page>
     <div class="card my-3" data-id="${warehouse.id}">
         <div class="m-2">
-            <span>${warehouse.id}</span><br/>
-            <i>${warehouse.name}</i><br/>
-            <i>${warehouse.getResponsibleEmployee().getName()}</i><br/>
-            <i>${warehouse.getDocumentType().getName()}</i><br/>
+            <span>Id: ${warehouse.id}</span><br/>
+            <i>Название: ${warehouse.name}</i><br/>
+            <i>Имя ответственного: ${warehouse.getResponsibleEmployee().getName()}</i><br/>
+            <i>Тип документа: ${warehouse.getDocumentType().getName()}</i><br/>
         </div>
         <div class="card-footer text-muted container">
             <div class="row">
@@ -15,7 +15,7 @@
     </div>
 
     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        warehouse editor
+        Редактирование
     </a>
     <div class="collapse show" id="collapseExample">
         <div class="form-group mt-3">

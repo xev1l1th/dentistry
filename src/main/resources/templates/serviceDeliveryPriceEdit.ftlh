@@ -8,7 +8,7 @@
             <form method="post" enctype="multipart/form-data">
                 <input type="hidden" name="productPrice" value="${sdp.getId()}">
                 <div class="form-group">
-                    <input type="number" class="form-control" name="price" placeholder="Введите price"/>
+                    <input type="number" class="form-control" name="price" placeholder="Введите цену"/>
                 </div>
 
                 <div class="form-group">

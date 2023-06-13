@@ -33,4 +33,8 @@ public class WarehouseService {
     public void update(Warehouse warehouse) {
         repo.save(warehouse);
     }
+
+    public void delete(Warehouse warehouse) {
+        repo.delete(warehouse);
+    }
 }

@@ -1,3 +1,4 @@
+<#include "secur.ftlh">
 <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
 <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
     <div class="container">
@@ -78,13 +79,15 @@
                     </div>
                 </li>
             </ul>
-            <!-- Этот блок расположен справа
+
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search"
-                       aria-label="Search">
-                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+                <#if currentUserId == -1>
+                    <a class="navbar-brand" href="/login">Вход</a>
+                </#if>
+                <#if currentUserId != -1>
+                    <a class="navbar-brand" href="/logout">Выход</a>
+                </#if>
             </form>
-            --->
         </div>
     </div>
 </nav>

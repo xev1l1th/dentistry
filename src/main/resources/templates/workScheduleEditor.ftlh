@@ -2,18 +2,18 @@
 <@c.page>
     <div class="card my-3" data-id="${workschedule.id}">
         <div class="m-2">
-            <span>${workschedule.id}</span><br/>
-            <i>${workschedule.name}</i>
+            <span>Id: ${workschedule.id}</span><br/>
+            <i>Название: ${workschedule.name}</i>
         </div>
         <div class="card-footer text-muted container">
             <div class="row">
-                <a class="col btn btn-primary" href="/workschedule/edit?workSchedule=${workschedule.id}">Edit</a>
+                <a class="col btn btn-primary" href="/workschedule/edit?workSchedule=${workschedule.id}">Редактировать</a>
             </div>
         </div>
     </div>
 
     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        WokSchedule editor
+        Редактирование
     </a>
     <div class="collapse show" id="collapseExample">
         <div class="form-group mt-3">
@@ -24,7 +24,7 @@
                 </div>
                 <input type="hidden" name="id" value="<#if message??>${message.id}</#if>" />
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Save workSchedule</button>
+                    <button type="submit" class="btn btn-primary">Сохранить график</button>
                 </div>
             </form>
         </div>

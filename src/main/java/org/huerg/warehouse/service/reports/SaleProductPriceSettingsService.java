@@ -73,4 +73,8 @@ public class SaleProductPriceSettingsService {
                 .findFirst()
                 .orElseThrow();
     }
+
+    public void deleteSale(SaleProductPriceSetting spp) {
+        saleProductPriceSettingsRepo.delete(spp);
+    }
 }

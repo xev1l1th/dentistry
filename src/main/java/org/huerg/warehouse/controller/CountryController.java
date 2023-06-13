@@ -36,6 +36,12 @@ public class CountryController {
         return "redirect:/country";
     }
 
+    @GetMapping("/delete")
+    public String postEdeeit(@RequestParam Country country) {
+        countryService.delete(country);
+        return "redirect:/country";
+    }
+
     @PostMapping
     public String create(@RequestParam String name) {
         countryService.createCountry(name);

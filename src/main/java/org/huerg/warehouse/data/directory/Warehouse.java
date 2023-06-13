@@ -35,7 +35,7 @@ public class Warehouse {
     @Enumerated(EnumType.STRING)
     private WarehouseType documentType;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "employee_id", referencedColumnName = "id")
     private Employee responsibleEmployee;
 }

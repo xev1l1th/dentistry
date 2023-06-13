@@ -54,6 +54,13 @@ public class EmployeeController {
         return "redirect:/employee";
     }
 
+    @GetMapping("/delte")
+    public String postEdieeet(@RequestParam Employee employee
+    ) {
+        employeeService.delete(employee);
+        return "redirect:/employee";
+    }
+
     @PostMapping
     public String create(@RequestParam String name, @RequestParam String position, @RequestParam Gender gender, @RequestParam EmployeeType employeeType) {
         employeeService.createEmployee(name, gender, employeeType, position);

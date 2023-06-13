@@ -17,6 +17,8 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Optional;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
 @RequiredArgsConstructor
 @Controller
@@ -47,6 +49,11 @@ public class OrganizationController {
         Optional.ofNullable(address).filter(StringUtil::isNotEmpty).ifPresent(organisation::setAddress);
         Optional.ofNullable(inn).filter(StringUtil::isNotEmpty).ifPresent(organisation::setInn);
         organizationService.update(organisation);
+        return "redirect:/organization";
+    }
+    @GetMapping("/delete")
+    public String postEditE(@RequestParam Organisation organisation) {
+        organizationService.delete(organisation);
         return "redirect:/organization";
     }
 

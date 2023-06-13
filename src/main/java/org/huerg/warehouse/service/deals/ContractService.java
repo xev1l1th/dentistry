@@ -35,4 +35,8 @@ public class ContractService {
     public void update(Contract contract) {
         contractRepo.save(contract);
     }
+
+    public void delete(Contract contract) {
+        contractRepo.delete(contract);
+    }
 }

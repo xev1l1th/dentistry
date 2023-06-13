@@ -2,8 +2,8 @@
 <@c.page>
     <div class="card my-3" data-id="${country.id}">
         <div class="m-2">
-            <span>${country.id}</span><br/>
-            <i>${country.name}</i>
+            <span>Id: ${country.id}</span><br/>
+            <i>Страна: ${country.name}</i>
         </div>
         <div class="card-footer text-muted container">
             <div class="row">
@@ -13,7 +13,7 @@
     </div>
 
     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Country editor
+        Изменение страны
     </a>
     <div class="collapse show" id="collapseExample">
         <div class="form-group mt-3">

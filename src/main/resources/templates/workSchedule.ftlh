@@ -1,18 +1,22 @@
 <#import "parts/common.ftlh" as c>
+<#include "parts/secur.ftlh">
+
 <@c.page>
-    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Создать график работы
-    </a>
+    <#if isAdmin>
+        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Создать график работы
+        </a>
+    </#if>
     <div class="collapse" id="collapseExample">
         <div class="form-group mt-3">
-            <form method="post" enctype="multipart/form-data">
+            <form method="post" action="/workschedule" enctype="multipart/form-data">
                 <div class="form-group">
                     <input type="text" class="form-control ${(textError??)?string('is-invalid', '')}"
                            value="<#if message??>${message.text}</#if>" name="name" placeholder="Введите название" />
                 </div>
                 <input type="hidden" name="id" value="<#if message??>${message.id}</#if>" />
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Save workSchedule</button>
+                    <button type="submit" class="btn btn-primary">Сохранить график</button>
                 </div>
             </form>
         </div>
@@ -26,14 +30,21 @@
                     <span>${message.id}</span><br/>
                     <i>${message.name}</i>
                 </div>
+                <#if isAdmin>
                 <div class="card-footer text-muted container">
                     <div class="row">
-                        <a class="col btn btn-primary" href="/workschedule/edit?workSchedule=${message.id}">Edit</a>
+                        <a class="col btn btn-primary" href="/workschedule/edit?workSchedule=${message.id}">Редактировать</a>
                     </div>
                 </div>
+
+                <div class="card-footer text-muted container">
+                    <div class="row">
+                        <a class="col btn btn-primary" href="/workschedule/delete?workSchedule=${message.id}">Удалить</a>
+                    </div>
+                </div>
+                </#if>
             </div>
         <#else>
-            No data
         </#list>
     </div>
 

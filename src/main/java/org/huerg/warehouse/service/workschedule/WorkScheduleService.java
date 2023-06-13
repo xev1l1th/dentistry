@@ -30,4 +30,7 @@ public class WorkScheduleService {
         return workScheduleRepo.findAll();
     }
 
+    public void delete(WorkSchedule workSchedule) {
+        workScheduleRepo.delete(workSchedule);
+    }
 }

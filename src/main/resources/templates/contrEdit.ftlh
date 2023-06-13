@@ -2,13 +2,13 @@
 <@c.page>
     <div class="card my-3" data-id="${cpp.id}">
         <div class="m-2">
-            <span>${cpp.id}</span><br/>
-            <i>${cpp.contractor.name}</i><br/>
-            <i>${cpp.getResponsibleEmployee().getName()}</i><br/>
-            <i>${cpp.getCreatedDate().toString()}</i><br/>
+            <span>Id: ${cpp.id}</span><br/>
+            <i>Наименование контрагента: ${cpp.contractor.name}</i><br/>
+            <i>Ответственное лицо: ${cpp.getResponsibleEmployee().getName()}</i><br/>
+            <i>Дата: ${cpp.getCreatedDate().toString()}</i><br/>
             <#list cppPrices as price>
                 <i>${price.getProduct().getName()} cтоит ${price.getPrice()} рублей</i><br/>
-                <a class="col btn btn-primary" href="/contrproductprices/editprice?price=${price.id}">Edit</a>
+                <a class="col btn btn-primary" href="/contrproductprices/editprice?price=${price.id}">Редактировать</a>
             </#list>
         </div>
     </div>

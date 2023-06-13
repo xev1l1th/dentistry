@@ -8,8 +8,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MainController {
 
-    @GetMapping
+    @GetMapping("")
     public String get() {
         return "main";
+    }
+
+    @GetMapping("/")
+    public String gettt() {
+        return "main";
+    }
+
+    @GetMapping("/js/**")
+    public String getA() {
+        return "redirect:/";
+    }
+
+    @GetMapping("/сss/**")
+    public String getC() {
+        return "redirect:/";
     }
 }

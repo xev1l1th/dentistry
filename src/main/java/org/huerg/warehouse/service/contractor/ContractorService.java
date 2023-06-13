@@ -36,4 +36,8 @@ public class ContractorService {
     public void update(Contractor contractor) {
         contractorRepo.save(contractor);
     }
+
+    public void delete(Contractor contractor) {
+        contractorRepo.delete(contractor);
+    }
 }
