@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -42,8 +43,10 @@ public class OrderController {
     }
 
     @PostMapping
-    public String createOrder(@RequestParam Client client, @RequestParam Long count, @RequestParam SaleProductPrice product) {
-        orderService.createOrder(client, product, count);
+    public String createOrder(@RequestParam Client client, @RequestParam List<Long> count, @RequestParam List<SaleProductPrice> product) {
+        for(int i = 0; i < product.size(); i++) {
+            orderService.createOrder(client, product.get(i), count.get(i));
+        }
         return "redirect:/order";
     }
 
