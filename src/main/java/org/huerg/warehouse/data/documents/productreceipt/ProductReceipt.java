@@ -43,7 +43,7 @@ public class ProductReceipt {
     @JoinColumn(name = "warhouse_id", referencedColumnName = "id")
     private Warehouse warehouse;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "receipt_productpriceinfo", joinColumns = @JoinColumn(name = "receipt_id"), inverseJoinColumns = @JoinColumn(name = "producrprice_id"))
     private Set<ProductReceiveInfo> contractorProductPrice = new HashSet<>();
 

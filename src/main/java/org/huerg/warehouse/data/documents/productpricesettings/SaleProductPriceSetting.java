@@ -35,7 +35,7 @@ public class SaleProductPriceSetting {
     @JoinColumn(name = "employee_id", referencedColumnName = "id")
     private Employee responsibleEmployee;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "contractor_saleproductprice", joinColumns = @JoinColumn(name = "settings_id"), inverseJoinColumns = @JoinColumn(name = "saleproductprice_id"))
     private Set<SaleProductPrice> productPrices = new HashSet<>();
 

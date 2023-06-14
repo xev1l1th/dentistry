@@ -77,6 +77,7 @@
                         -->
                         <a class="dropdown-item" href="/orgprices">Прайс лист товаров</a>
                         <a class="dropdown-item" href="/popularity">Популярность товаров</a>
+                        <a class="dropdown-item" href="/servicereport">Отчет по услугам</a>
                     </div>
                 </li>
             </ul>

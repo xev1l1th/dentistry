@@ -35,7 +35,7 @@ public class ServiceDelivery {
     @JoinColumn(name = "employee_id", referencedColumnName = "id")
     private Employee responsibleEmployee;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "servicedelivery_prices", joinColumns = @JoinColumn(name = "servicedelivery_id"), inverseJoinColumns = @JoinColumn(name = "serviceprice_id"))
     private Set<ServiceDeliveryPrice> serviceDeliveryPrices = new HashSet<>();
 }
