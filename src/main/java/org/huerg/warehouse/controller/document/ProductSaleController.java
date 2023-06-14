@@ -71,7 +71,7 @@ public class ProductSaleController {
                              @RequestParam Organisation organisation,
                              @RequestParam Warehouse warehouse,
                              @RequestParam SaleProductPrice productPrice) {
-        productSaleService.save(time, count, contractor, employee, organisation, warehouse, productPrice);
+        productSaleService.save(time, count, contractor, employee, organisation, warehouse, productPrice, false);
         return "redirect:/sale";
     }
 

@@ -47,4 +47,6 @@ public class ProductSale {
     @JoinTable(name = "sale_productpriceinfo", joinColumns = @JoinColumn(name = "sale_id"), inverseJoinColumns = @JoinColumn(name = "producrprice_id"))
     private Set<ProductSalePriceInfo> contractorProductPrice = new HashSet<>();
 
+    private boolean fromOrder;
+
 }

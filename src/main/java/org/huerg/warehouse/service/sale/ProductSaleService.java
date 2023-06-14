@@ -13,12 +13,12 @@ import org.huerg.warehouse.repo.ProductReceiptRepo;
 import org.huerg.warehouse.repo.ProductReceiveInfoRepo;
 import org.huerg.warehouse.repo.ProductSalePriceInfoRepo;
 import org.huerg.warehouse.repo.ProductSaleRepo;
+import org.huerg.warehouse.service.reports.ProductRemnantReportService;
+import org.huerg.warehouse.service.reports.WarehouseRemnantInfo;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -27,22 +27,27 @@ public class ProductSaleService {
     private final ProductSaleRepo productSaleRepo;
     private final ProductSalePriceInfoRepo productSalePriceInfoRepo;
     private final ProductReceiveInfoRepo productReceiveInfoRepoRepo;
+    private final ProductRemnantReportService remnantReportService;
 
 
-    public void checkAmountOfProduct(SaleProductPrice productPrice, Long count) {
-        Product product = productPrice.getProduct();
-        long countOfProduct = productReceiveInfoRepoRepo.findAll()
-                .stream()
-                .filter(r -> r.getProduct().getId().equals(product.getId()))
-                .map(ProductReceiveInfo::getReceiptCount)
-                .mapToLong(Long::longValue)
-                .sum();
+    private void checkAmountOfProduct(SaleProductPrice productPrice, Long count) {
+        Map<String, Set<WarehouseRemnantInfo>> stringSetMap = remnantReportService.calculateProductRemnantReport(null);
+        //find all our products
+        var countOfProduct = 0;
+        for(var entry: stringSetMap.entrySet()) {
+            for (var s : entry.getValue()) {
+                var c = Optional.ofNullable(s.getProductInfo())
+                        .map(i -> i.get(productPrice.getProduct().getName()))
+                        .orElse(0);
+                countOfProduct += c;
+            }
+        }
 
-        if (countOfProduct < count) {
+         if (countOfProduct < count) {
             throw new NotEnoughProductException();
         }
     }
-    public void save(String time, Long count, Contractor contractor, Employee employee, Organisation organisation, Warehouse warehouse, SaleProductPrice productPrice) {
+    public void save(String time, Long count, Contractor contractor, Employee employee, Organisation organisation, Warehouse warehouse, SaleProductPrice productPrice, boolean fromOrder) {
 
         checkAmountOfProduct(productPrice, count);
 
@@ -63,6 +68,7 @@ public class ProductSaleService {
                         .organisation(organisation)
                         .localDateTime(LocalDateTime.parse(time))
                         .contractorProductPrice(new HashSet<>(Arrays.asList(save)))
+                        .fromOrder(fromOrder)
                         .build()
         );
     }
@@ -82,7 +88,10 @@ public class ProductSaleService {
     }
 
     public List<ProductSale> getAll() {
-       return productSaleRepo.findAll();
+       return productSaleRepo.findAll()
+               .stream()
+               .filter(p -> !p.isFromOrder())
+               .toList();
     }
 
     public void delete(ProductSale productReceipt) {

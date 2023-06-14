@@ -44,6 +44,7 @@
                         <a class="dropdown-item" href="/country">Страны</a>
                         <a class="dropdown-item" href="/product">Товары</a>
                         <a class="dropdown-item" href="/services">Услуги</a>
+                        <a class="dropdown-item" href="/client">Клиенты</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -61,6 +62,7 @@
                         <a class="dropdown-item" href="/receipt">Поступление товара</a>
                         <a class="dropdown-item" href="/sale">Продажа товара</a>
                         <a class="dropdown-item" href="/saleprices">Установка цен на товары</a>
+                        <a class="dropdown-item" href="/order">Создание заказа</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -78,6 +80,7 @@
                         <a class="dropdown-item" href="/orgprices">Прайс лист товаров</a>
                         <a class="dropdown-item" href="/popularity">Популярность товаров</a>
                         <a class="dropdown-item" href="/servicereport">Отчет по услугам</a>
+                        <a class="dropdown-item" href="/order/report">Отчет по заказам</a>
                     </div>
                 </li>
             </ul>
