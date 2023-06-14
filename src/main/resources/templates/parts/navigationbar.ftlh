@@ -32,7 +32,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                        <a class="dropdown-item" href="/income">Виды доходов и расходов</a>
+
                         <!--
                         <div class="dropdown-divider"></div>
                         -->
@@ -79,7 +79,7 @@
                         -->
                         <a class="dropdown-item" href="/orgprices">Прайс лист товаров</a>
                         <a class="dropdown-item" href="/popularity">Популярность товаров</a>
-                        <a class="dropdown-item" href="/servicereport">Отчет по услугам</a>
+                        <a class="dropdown-item" href="/servicereport">Прайслист услуг</a>
                         <a class="dropdown-item" href="/order/report">Отчет по заказам</a>
                     </div>
                 </li>

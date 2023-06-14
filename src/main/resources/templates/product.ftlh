@@ -46,7 +46,6 @@
                 </div>
             </div>
         <#else>
-            No data
         </#list>
     </div>
 </@c.page>

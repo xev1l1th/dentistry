@@ -17,8 +17,8 @@
 
                 <label for="patronymicName">Введите отчество:</label>
                 <input type="text" name="patronymicName" id="patronymicName" placeholder="Отчество"/>
-                <label for="count">Введите номер:</label>
-                <input type="tel" name="phone" id="phone" placeholder="номер"/>
+                <label for="count">Введите номер телефона:</label>
+                <input type="tel" name="phone" id="phone" placeholder="Номер"/>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Сохранить</button>
                 </div>

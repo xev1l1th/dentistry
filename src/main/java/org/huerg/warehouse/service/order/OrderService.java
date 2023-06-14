@@ -1,13 +1,9 @@
 package org.huerg.warehouse.service.order;
 
 import lombok.RequiredArgsConstructor;
-import org.aspectj.weaver.ast.Or;
 import org.huerg.warehouse.data.directory.Client;
-import org.huerg.warehouse.data.directory.Product;
-import org.huerg.warehouse.data.directory.Warehouse;
 import org.huerg.warehouse.data.documents.order.Order;
 import org.huerg.warehouse.data.documents.productpricesettings.SaleProductPrice;
-import org.huerg.warehouse.data.documents.productsale.ProductSalePriceInfo;
 import org.huerg.warehouse.repo.*;
 import org.huerg.warehouse.service.sale.ProductSaleService;
 import org.springframework.stereotype.Service;
@@ -20,7 +16,6 @@ import java.util.List;
 public class OrderService {
 
     private final OrderRepo orderRepo;
-    private final ClientRepo clientRepo;
     private final ProductSaleService productSaleService;
 
     public void createOrder(Client client, SaleProductPrice product, Long count) {
@@ -69,5 +64,9 @@ public class OrderService {
                 .stream()
                 .filter(Order::isCommitted)
                 .toList();
+    }
+
+    public void delete(Order order) {
+        orderRepo.delete(order);
     }
 }

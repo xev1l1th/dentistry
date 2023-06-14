@@ -11,7 +11,7 @@
         <div id="select-container" class="form-group mt-3">
             <form method="post" action="/order" enctype="multipart/form-data">
                 <div id="fff">
-                <label for="client">Выберите Клиент:</label>
+                <label for="client">Выберите клиента:</label>
                 <br/>
                 <select class="custom-select" id="client" name="client">
                     <#list clients as cc>
@@ -84,6 +84,9 @@
                     <div class="card-footer text-muted container">
                         <div class="row">
                             <a class="col btn btn-primary" href="/order/commit?order=${order.id}">Выполнить</a>
+                        </div>
+                        <div class="row">
+                            <a class="col btn btn-primary" href="/order/delete?order=${order.id}">Удалить</a>
                         </div>
                     </div>
                 </#if>

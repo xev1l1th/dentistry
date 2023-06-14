@@ -62,4 +62,10 @@ public class OrderController {
         return "orderReport";
     }
 
+    @GetMapping("delete")
+    public String delete(Order order) {
+        orderService.delete(order);
+        return "redirect:/order";
+    }
+
 }
